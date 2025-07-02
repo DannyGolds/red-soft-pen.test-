@@ -1,0 +1,72 @@
+Starting Nmap 7.95 ( https://nmap.org ) at 2025-07-02 22:38 MSK
+Nmap scan report for red-soft.ru (188.246.186.2)
+Host is up (0.016s latency).
+Not shown: 982 filtered tcp ports (no-response), 10 filtered tcp ports (host-prohibited)
+PORT     STATE  SERVICE    VERSION
+25/tcp   open   smtp       Postfix smtpd
+| ssl-cert: Subject: commonName=*.red-soft.ru/organizationName=\xD0\x9E\xD0\x9E\xD0\x9E \xD0\xA0\xD0\x95\xD0\x94 \xD0\xA1\xD0\x9E\xD0\xA4\xD0\xA2/stateOrProvinceName=\xD0\x9C\xD0\xBE\xD1\x81\xD0\xBA\xD0\xB2\xD0\xB0/countryName=RU
+| Subject Alternative Name: DNS:*.red-soft.ru, DNS:*.reddatabase.ru, DNS:reddatabase.ru, DNS:red-soft.ru
+| Not valid before: 2024-08-28T16:24:13
+|_Not valid after:  2025-09-29T16:24:12
+| smtp-commands: red-soft.ru, PIPELINING, SIZE 52428800, VRFY, ETRN, STARTTLS, ENHANCEDSTATUSCODES, 8BITMIME, DSN, CHUNKING
+|_ 2.0.0 Commands: AUTH BDAT DATA EHLO ETRN HELO HELP MAIL NOOP QUIT RCPT RSET STARTTLS VRFY XCLIENT XFORWARD
+|_ssl-date: TLS randomness does not represent time
+80/tcp   open   http       nginx 1.10.3
+|_http-title: Did not follow redirect to https://www.red-soft.ru/
+|_http-server-header: nginx/1.10.3
+443/tcp  open   ssl/http   nginx 1.10.3
+| ssl-cert: Subject: commonName=*.red-soft.ru/organizationName=\xD0\x9E\xD0\x9E\xD0\x9E \xD0\xA0\xD0\x95\xD0\x94 \xD0\xA1\xD0\x9E\xD0\xA4\xD0\xA2/stateOrProvinceName=\xD0\x9C\xD0\xBE\xD1\x81\xD0\xBA\xD0\xB2\xD0\xB0/countryName=RU
+| Subject Alternative Name: DNS:*.red-soft.ru, DNS:*.reddatabase.ru, DNS:reddatabase.ru, DNS:red-soft.ru
+| Not valid before: 2024-08-28T16:24:13
+|_Not valid after:  2025-09-29T16:24:12
+| http-robots.txt: 36 disallowed entries (15 shown)
+| /includes/ /misc/ /modules/ /profiles/ /scripts/ 
+| /themes/ /CHANGELOG.txt /cron.php /INSTALL.mysql.txt 
+| /INSTALL.pgsql.txt /INSTALL.sqlite.txt /install.php /INSTALL.txt 
+|_/LICENSE.txt /MAINTAINERS.txt
+|_ssl-date: 2025-07-02T19:39:29+00:00; 0s from scanner time.
+| tls-nextprotoneg: 
+|_  http/1.1
+|_http-server-header: nginx/1.10.3
+|_http-title: Did not follow redirect to http://www.red-soft.ru/ru/
+465/tcp  closed smtps
+587/tcp  closed submission
+1043/tcp open   ssl/http   nginx 1.10.3
+|_ssl-date: 2025-07-02T19:39:29+00:00; 0s from scanner time.
+| http-auth: 
+| HTTP/1.1 401 Unauthorized\x0D
+|_  Basic realm=Restricted Content 
+| ssl-cert: Subject: commonName=*.red-soft.ru/organizationName=\xD0\x9E\xD0\x9E\xD0\x9E \xD0\xA0\xD0\x95\xD0\x94 \xD0\xA1\xD0\x9E\xD0\xA4\xD0\xA2/stateOrProvinceName=\xD0\x9C\xD0\xBE\xD1\x81\xD0\xBA\xD0\xB2\xD0\xB0/countryName=RU
+| Subject Alternative Name: DNS:*.red-soft.ru, DNS:*.reddatabase.ru, DNS:reddatabase.ru, DNS:red-soft.ru
+| Not valid before: 2024-08-28T16:24:13
+|_Not valid after:  2025-09-29T16:24:12
+|_http-title: 401 Authorization Required
+| tls-nextprotoneg: 
+|_  http/1.1
+|_http-server-header: nginx/1.10.3
+1080/tcp open   http       nginx 1.10.3
+|_http-server-header: nginx/1.10.3
+|_http-title: 401 Authorization Required
+| http-auth: 
+| HTTP/1.1 401 Unauthorized\x0D
+|_  Basic realm=Restricted Content 
+8443/tcp open   ssl/http   nginx 1.10.3
+|_ssl-date: 2025-07-02T19:39:29+00:00; 0s from scanner time.
+| sslv2: 
+|   SSLv2 supported
+|   ciphers: 
+|     SSL2_DES_192_EDE3_CBC_WITH_MD5
+|     SSL2_IDEA_128_CBC_WITH_MD5
+|     SSL2_RC2_128_CBC_WITH_MD5
+|_    SSL2_RC4_128_WITH_MD5
+|_http-server-header: nginx/1.10.3
+|_http-title: 400 The plain HTTP request was sent to HTTPS port
+| tls-nextprotoneg: 
+|_  http/1.1
+| ssl-cert: Subject: commonName=red-soft.ru/organizationName=RedSoft/stateOrProvinceName=Moscow/countryName=RU
+| Not valid before: 2017-02-06T01:48:56
+|_Not valid after:  2019-02-06T01:48:56
+Service Info: Host:  red-soft.ru
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 57.10 seconds
